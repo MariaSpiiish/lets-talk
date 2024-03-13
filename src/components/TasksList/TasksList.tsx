@@ -20,7 +20,7 @@ function TasksList({ pickedTopic }: PropsType) {
         <div className="tasks-container">
             <h2>{pickedTopic.topic}</h2>
             <li>{isVideo 
-                ? <p>To make the most of the topic follow the link below.{pickedTopic.about}</p>
+                ? <iframe width="560" height="315" src="https://www.youtube.com/embed/gCfzeONu3Mo?si=yB9TOvA-PmyZXT0L" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share fullscreen"></iframe>
                 : pickedTopic.content.split('\n').map((item, i) => <p key={i} className="tasks__text">{item}</p>)}
             </li>
             <li>
