@@ -1,0 +1,15 @@
+.tasks__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 980px;
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+.tasks__text {
+    margin: 20px;
+    list-style: none;
+}

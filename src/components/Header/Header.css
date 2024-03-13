@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+}
+
+.header__container {
+    display: flex;
+    min-width: 200px;
+    gap: 20px;
+}
+
+.header__button {
+    font-size: 14px;
+    border: none;
+    background-color: #876bb0;
+    padding: 5px;
+    border-radius: 7%;
+    cursor: pointer;
+    max-height: 30px;
+    margin-top: 10px;
+}
+
+.header__button:hover {
+    transform: scale(0.93);
+}
+
+.header__logo {
+    background: transparent;
+    width: 60px;
+    height: 60px;
+}
