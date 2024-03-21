@@ -8,13 +8,12 @@ type PropsType = {
 }
 
 function StarterPage({ setViewQuestions, setTopic }: PropsType) {
-
     const pageContent = (
         topics.map((topic, i) => {
             const clippedTopic = topic.split(' ').join('-');
             
             return (
-                <Topic key={i} topic={clippedTopic} setViewQuestions={setViewQuestions} setTopic={setTopic}/>
+                <Topic key={i} id={i} topic={clippedTopic} setViewQuestions={setViewQuestions} setTopic={setTopic}/>
             )
         })
     );
@@ -22,7 +21,12 @@ function StarterPage({ setViewQuestions, setTopic }: PropsType) {
     const content = (
         <main className='main'>
             <h1 className='main__header'>What topic would you like to discuss today?</h1>
-            {pageContent}
+            <div className='scroller'>
+                <ul className='scroller__inner'>
+                    {pageContent}
+                </ul>
+            </div>
+            
         </main>
     )
     

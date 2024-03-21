@@ -6,6 +6,7 @@ import TasksList from '../TasksList/TasksList';
 type Topic = {
   topic: string;
   content: string;
+  title?: string;
   type: string;
   vocabulary: string;
   questions: string;
@@ -27,7 +28,7 @@ function QuestionPage({ topic }: PropsType) {
   )
 
   const content = (
-    <main className="main main-questions">
+    <main className="main">
         {pageContent}
     </main>
 )

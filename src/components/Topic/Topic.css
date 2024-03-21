@@ -7,6 +7,7 @@
     background: #fff;
     padding: 10px;
     margin: 10px;
+    
 }
 
 .card__img {
@@ -29,4 +30,12 @@
 
 .card__button:hover {
     transform: scale(0.92);
+}
+
+.card:last-child {
+    margin-bottom: 130px;
+}
+
+.card:first-child {
+    margin-top: 130px;
 }

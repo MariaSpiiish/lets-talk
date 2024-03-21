@@ -1,0 +1,34 @@
+.tasks__header {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.tasks__subheader {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.tasks__subheader-light {
+    opacity: 0.5;
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.tasks__img {
+    width: 421px;
+    height: 551px;
+    margin-bottom: 20px;
+}
+
+.tasks__text {
+    margin: 20px 0 20px 0;
+   
+}
+
+.tasks__text-container {
+    max-width: 980px;
+}
+
+.tasks__video {
+    border: none;
+}
