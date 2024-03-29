@@ -8,13 +8,13 @@ function Footer() {
   };
 
   const content = (
-    <div className="footer">
+    <footer className="footer">
         <div className="footer__date">&copy; {year}</div>
         <div className="footer__link-container">
           <button className="footer__button" onClick={handleClickGit}>GitHub</button>
-          <button className="footer__button">About Me</button>
+          <button className="footer__button">About</button>
         </div>
-      </div>
+    </footer>
   )
   
   return content;

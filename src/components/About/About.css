@@ -1,0 +1,19 @@
+.about {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_img {
+    width: 100%; 
+    height: auto;
+}
+
+.about_img-wrapper {
+    position: relative; 
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden; 
+    border-radius: 50%;
+}
