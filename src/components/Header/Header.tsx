@@ -2,7 +2,7 @@ import './Header.css'
 
 type PropsType = {
   viewQuestions: boolean
-  setViewQuestions?: React.Dispatch<React.SetStateAction<boolean>>
+  setViewQuestions: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 function Header({ viewQuestions, setViewQuestions }: PropsType) {
