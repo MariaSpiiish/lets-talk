@@ -1,19 +1,18 @@
-import './StarterPage.css';
+import './HomePage.css';
 import { topics } from '../../data/topics'; 
 import Topic from '../Topic/Topic';
 
 type PropsType = {
-    setViewQuestions: React.Dispatch<React.SetStateAction<boolean>>,
     setTopic: React.Dispatch<React.SetStateAction<string>>
 }
 
-function StarterPage({ setViewQuestions, setTopic }: PropsType) {
+function HomePage({ setTopic }: PropsType) {
     const pageContent = (
         topics.map((topic, i) => {
             const clippedTopic = topic.split(' ').join('-');
             
             return (
-                <Topic key={i} id={i} topic={clippedTopic} setViewQuestions={setViewQuestions} setTopic={setTopic}/>
+                <Topic key={i} id={i} topic={clippedTopic} setTopic={setTopic}/>
             )
         })
     );
@@ -33,4 +32,4 @@ function StarterPage({ setViewQuestions, setTopic }: PropsType) {
     return content;
 }
 
-export default StarterPage;
+export default HomePage;

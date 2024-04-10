@@ -1,13 +1,18 @@
+import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
 
-type PropsType = {
-  viewQuestions: boolean
-  setViewQuestions: React.Dispatch<React.SetStateAction<boolean>>
-}
+// type PropsType = {
+//   viewQuestions: boolean
+//   setViewQuestions: React.Dispatch<React.SetStateAction<boolean>>
+// }
 
-function Header({ viewQuestions, setViewQuestions }: PropsType) {
+function Header() {
+  const location = useLocation();
+ 
   const img: string = new URL(`../../images/logo.png`, import.meta.url).href;
-  const pageContent = viewQuestions ? <button className='header__button header__button-nav' onClick={() => setViewQuestions(false)}>Pick another topic</button> : <></>
+  const pageContent = location.pathname === "/"
+    ? <button className='header__button header__button-nav'>Pick another topic</button>
+    : <Link to="/" className="header__button header__button-nav">Pick a topic</Link>
 
   const content = (
     <header className='header'>

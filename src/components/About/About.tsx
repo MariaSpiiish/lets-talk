@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './About.css';
 
 function About() {
@@ -11,23 +12,23 @@ function About() {
     const pageContent = (
         <div className="about">
             <div className="about_circle">
-                <div className="about_img-wrapper">
+                <Link to="/about/mariia" className="about_img-wrapper">
                     <img src={imgM} alt="meet mariia" className="about_img" style={{marginTop: '-50px'}}/>
-                </div>
+                </Link>
                 <div className="about_text-cont about_text-cont-m">
                     <p className="about_text">{textM.split('').map((char, i) => (
-                        <span style={{transform: `rotate(${i * 7.5}deg)`}}>{char}</span>
+                        <span key={i} style={{transform: `rotate(${i * 7.5}deg)`}}>{char}</span>
                     ))}</p>
                 </div>
             </div>
             
             <div className="about_circle">
-                <div className="about_img-wrapper">
+                <Link to="/about/aleksandra" className="about_img-wrapper">
                     <img src={imgA} alt="meet aleksandra" className="about_img"/>
-                </div>
+                </Link>
                 <div className="about_text-cont about_text-cont-a">
                     <p className="about_text">{textA.split('').map((char, i) => (
-                        <span style={{transform: `rotate(${i * 7.3}deg)`}}>{char}</span>
+                        <span key={i} style={{transform: `rotate(${i * 7.3}deg)`}}>{char}</span>
                     ))}</p>
                 </div>
             </div>
