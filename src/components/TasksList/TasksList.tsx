@@ -8,7 +8,8 @@ type Topic = {
     type: string;
     vocabulary: string;
     questions: string;
-    about: string
+    about: string;
+    checked: boolean
 }
 
 type PropsType = {

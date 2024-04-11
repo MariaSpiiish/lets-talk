@@ -6,7 +6,8 @@
             "type": "video",
             "vocabulary": "learningapps link",
             "questions": "1 Have you ever experienced miscommunication in your personal or professional life?\n 2 How do you think cultural background influences communication between individuals?\n 3 Do you believe that active listening is more important than verbal communication in effective communication?\n 4 How do emotions impact the way we interpret messages during communication?\n 5 Can you share a personal experience where miscommunication led to a misunderstanding or conflict?\n 6 What are some strategies that we can follow to avoid miscommunication?",
-            "about": "Sometimes when we talk to a friend about a problem, they might not understand why it's important to us. Or when we share an idea with a group, they might get confused. This happens because communication isn't always clear. Katherine Hampsten explains that miscommunication occurs frequently due to different understandings and perspectives. To improve communication and reduce frustration, it's important to express ourselves clearly and try to understand others' viewpoints better."
+            "about": "Sometimes when we talk to a friend about a problem, they might not understand why it's important to us. Or when we share an idea with a group, they might get confused. This happens because communication isn't always clear. Katherine Hampsten explains that miscommunication occurs frequently due to different understandings and perspectives. To improve communication and reduce frustration, it's important to express ourselves clearly and try to understand others' viewpoints better.",
+            "checked": false
         },
         {
             "topic": "Forming-habits",
@@ -15,7 +16,8 @@
             "type": "text",
             "vocabulary": "learningapps link",
             "questions": "1 How does your daily life influence the habits you form, like the ones mentioned in the story about running and reading?\n 2 What are some common problems people face when they try to start new habits? How can they solve these problems?\n 3 Why is it important to know yourself when you want to develop new habits? Can you think of a time when knowing yourself helped you start a new habit?\n 4 How can setting small, achievable goals help you form new habits? Can you give an example from your own life?\n 4 How do habits help people become better versions of themselves, like the author's experience with running and reading?\n 5 Can you share a habit that has helped you improve?\n 6 How can you use habits you already have to help you start new ones? Do you have an example of this?\n 7 Why is it helpful to have someone support you when you're trying to stick to a new habit? Can you think of a time when someone supported you in forming a new habit?\n 8 How can you make sure you keep up with your habits, even when things get tough? Can you think of a strategy that might help?\n 9 What makes you want to do things regularly, like the habits you're trying to form? Can you think of something that motivates you to stick to a habit?\n 10 How can you get back on track with your habits if you miss a day or forget to do them? Can you think of a time when you had to get back on track with a habit?",
-            "about": "nonesofar"
+            "about": "nonesofar",
+            "checked": false
         }
     ]
 }

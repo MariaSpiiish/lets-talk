@@ -10,7 +10,7 @@ function About() {
     const textA = "W riter  -  Reader  -  Teacher  -  Aleksandra  -  ";
 
     const pageContent = (
-        <div className="about">
+        <nav className="about">
             <div className="about_circle">
                 <Link to="/about/mariia" className="about_img-wrapper">
                     <img src={imgM} alt="meet mariia" className="about_img" style={{marginTop: '-50px'}}/>
@@ -34,7 +34,7 @@ function About() {
             </div>
             
                 
-        </div>
+        </nav>
     )
 
     const content = (

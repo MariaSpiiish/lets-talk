@@ -21,6 +21,12 @@
     margin-top: 10px;
 }
 
+.header__button-nav {
+    text-decoration: none;
+    color: inherit;
+    border-radius: 3%;
+}
+
 .header__button:hover {
     transform: scale(0.93);
 }

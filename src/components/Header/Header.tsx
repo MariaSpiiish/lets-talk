@@ -10,9 +10,18 @@ function Header() {
   const location = useLocation();
  
   const img: string = new URL(`../../images/logo.png`, import.meta.url).href;
-  const pageContent = location.pathname === "/"
-    ? <button className='header__button header__button-nav'>Pick another topic</button>
-    : <Link to="/" className="header__button header__button-nav">Pick a topic</Link>
+
+  let topicButtonText: string = 'Pick a topic';
+
+  if (location.pathname === "/questions") {
+    topicButtonText = "Pick another topic";
+  } 
+
+  const pageContent = (
+    location.pathname !== "/"
+    ? <Link to="/" className='header__button header__button-nav'>{topicButtonText}</Link>
+    : <></>
+  )
 
   const content = (
     <header className='header'>

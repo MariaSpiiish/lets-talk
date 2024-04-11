@@ -30,4 +30,5 @@
     flex-direction: column;
     gap: 10px;
     width: 550px;
+    list-style-type: none;
 }
