@@ -1,1 +1,1 @@
-export const topics: string[] = ["Miscommunication", "Forming habits", "AI", "Art", "Reading", "Travelling"];
+export const topicsarr: string[] = ["Miscommunication", "Forming habits", "AI", "Art", "Reading", "Travelling"];

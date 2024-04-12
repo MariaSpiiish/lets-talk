@@ -13,10 +13,7 @@ import {
 import HomePage from './components/StarterPage/HomePage.tsx';
 
 function App() {
-  // const [viewQuestions, setViewQuestions] = useState<boolean>(false);
   const [topic, setTopic] = useState<string>('');
-
-  // const pageContent = viewQuestions ? <QuestionPage topic={topic}/> : <StarterPage setTopic={setTopic} setViewQuestions={setViewQuestions}/>
 
   function Layout(): JSX.Element {
     return (

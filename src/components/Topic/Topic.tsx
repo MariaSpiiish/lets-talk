@@ -40,7 +40,7 @@ function Topic({ topic, id, setTopic }: PropsType) {
         <li ref={(el) => {if (el) cardRefs.current[id] = el}} className='card'>
                 <img src={img} alt={topic} className='card__img'></img>
                 <p className='card__text'>{topic.split('-').join(' ')}</p>
-                <Link to="/questions" className='card__button' onClick={() => {setTopic(topic)}}>✅</Link>
+                <Link to="/questions" className='card__button' onClick={() => {setTopic(topic)}}></Link>
         </li>   
     )
 

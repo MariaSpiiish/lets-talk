@@ -1,5 +1,6 @@
 import './HomePage.css';
-import { topics } from '../../data/topics'; 
+import { topicsarr } from '../../data/topics'; 
+import { topics } from '../../data/topics.json'
 import Topic from '../Topic/Topic';
 
 type PropsType = {
@@ -7,8 +8,10 @@ type PropsType = {
 }
 
 function HomePage({ setTopic }: PropsType) {
+    if (!localStorage.getItem("topics")) localStorage.setItem("topics", JSON.stringify(topics));
+    // JSON.parse
     const pageContent = (
-        topics.map((topic, i) => {
+        topicsarr.map((topic, i) => {
             const clippedTopic = topic.split(' ').join('-');
             
             return (
