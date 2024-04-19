@@ -9,7 +9,6 @@ type Topic = {
     vocabulary: string;
     questions: string;
     about: string;
-    checked: boolean
 }
 
 type PropsType = {

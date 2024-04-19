@@ -1,0 +1,28 @@
+{
+   "topics": [
+        {
+            "topic": "Miscommunication",
+            "checked": false
+        },
+        {
+            "topic": "Travelling",
+            "checked": false
+        },
+        {
+            "topic": "Forming habits",
+            "checked": true
+        },
+        {
+            "topic": "AI",
+            "checked": true
+        },
+        {
+            "topic": "Art",
+            "checked": false
+        },
+        {
+            "topic": "Reading",
+            "checked": false
+        }
+   ] 
+}

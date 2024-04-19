@@ -18,8 +18,10 @@ type PropsType = {
 }
 
 function QuestionPage({ topic }: PropsType) {
+  
  
   const pickedTopic: Topic | undefined = data.find(item => item.topic == topic);
+ 
 
   const pageContent: ReactElement | ReactElement[] = (
     pickedTopic

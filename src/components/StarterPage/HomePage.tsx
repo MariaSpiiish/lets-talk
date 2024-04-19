@@ -1,21 +1,28 @@
 import './HomePage.css';
-import { topicsarr } from '../../data/topics'; 
 import { topics } from '../../data/topics.json'
 import Topic from '../Topic/Topic';
+import { updateLocalStore } from '../../utils/utility-functions';
 
 type PropsType = {
-    setTopic: React.Dispatch<React.SetStateAction<string>>
+    setTopic: React.Dispatch<React.SetStateAction<string>>,
+}
+
+type TopicList = {
+    topic: string,
+    checked: boolean
 }
 
 function HomePage({ setTopic }: PropsType) {
-    if (!localStorage.getItem("topics")) localStorage.setItem("topics", JSON.stringify(topics));
-    // JSON.parse
+    updateLocalStore(topics);
+
+    const listOfTopics: TopicList[] = JSON.parse(localStorage.getItem("topics") || '[{"topic": "none", "checked": false}]');
+  
     const pageContent = (
-        topicsarr.map((topic, i) => {
-            const clippedTopic = topic.split(' ').join('-');
+        listOfTopics.map((item, i) => {
+            const clippedTopic = item.topic.split(' ').join('-');
             
             return (
-                <Topic key={i} id={i} topic={clippedTopic} setTopic={setTopic}/>
+                <Topic key={i} id={i} topic={clippedTopic} checked={item.checked} setTopic={setTopic} listOfTopics={listOfTopics}/>
             )
         })
     );

@@ -59,7 +59,16 @@
     right: 0;
 }
 
-
+.card__button-checked::after {
+    content: '✅';
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    top: -12px;
+    right: 0;
+}
 
 .card:last-child {
     margin-bottom: 150px;
