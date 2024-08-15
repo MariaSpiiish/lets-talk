@@ -22,3 +22,8 @@
 .footer__button:hover {
     opacity: 80%;
 }
+
+.footer__link {
+    color: #000;
+    text-decoration: none;
+}

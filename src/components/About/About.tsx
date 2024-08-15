@@ -1,6 +1,5 @@
 
 import { Link } from 'react-router-dom';
-import './About.css';
 
 function About() {
     const imgM: string = new URL(`../../images/mariia.jpg`, import.meta.url).href;

@@ -1,4 +1,3 @@
-import './QuestionPage.css';
 import { ReactElement } from 'react';
 import { data } from '../../data/data.json';
 import TasksList from '../TasksList/TasksList';

@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import './Topic.css';
 import { Link } from 'react-router-dom';
 
 type TopicList = {
@@ -13,32 +12,36 @@ type PropsType = {
     id: number,
     listOfTopics: TopicList[],
     setTopic: React.Dispatch<React.SetStateAction<string>>,
+    isModalOpen: boolean
 }
 
-function Topic({ topic, checked, id, listOfTopics, setTopic }: PropsType) {
+function Topic({ topic, checked, id, listOfTopics, setTopic, isModalOpen }: PropsType) {
     const cardRefs = useRef<HTMLElement[]>([]);
 
     useEffect(() => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            entry.target.classList.remove('out'); // Apply your animation class here
-          } else {
-            entry.target.classList.remove('in');
-            entry.target.classList.add('out');
-          }
-        });
-      }, { threshold: 0.7 }); // Adjust the threshold as needed
-  
-      cardRefs.current.forEach((cardRef) => {
-        
-        observer.observe(cardRef);
-      });
-  
-      return () => {
-        observer.disconnect();
-      };
+      if (!isModalOpen) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                entry.target.classList.remove('out'); // Apply your animation class here
+              } else {
+                entry.target.classList.remove('in');
+                entry.target.classList.add('out');
+              }
+            });
+          }, { threshold: 0.1 }); // Adjust the threshold as needed
+      
+          cardRefs.current.forEach((cardRef) => {
+            
+            observer.observe(cardRef);
+          });
+      
+          return () => {
+            observer.disconnect();
+          };
+      }
+      
     }, []);
 
     const handleClick = () => {

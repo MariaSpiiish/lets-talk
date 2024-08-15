@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-import './TasksList.css';
 
 type Topic = {
     topic: string;

@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('./vendor/normalize.css');
+@import url('./vendor/fonts/fonts.css');
+@import url('./components/Header/Header.css');
+@import url('./components/HomePage/HomePage.css');
+@import url('./components/Topic/Topic.css');
+@import url('./components/About/About.css');
+@import url('./components/Authors/Authors.css');
+@import url('./components/Contacts/Contacts.css');
+@import url('./components/QuestionsPage/QuestionPage.css');
+@import url('./components/TasksList/TasksList.css');
+@import url('./components/Footer/Footer.css');
+@import url('./components/TipsPopup/TipsPopup.css');
+
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;

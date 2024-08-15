@@ -1,10 +1,10 @@
-import './HomePage.css';
 import { topics } from '../../data/topics.json'
 import Topic from '../Topic/Topic';
 import { updateLocalStore } from '../../utils/utility-functions';
 
 type PropsType = {
     setTopic: React.Dispatch<React.SetStateAction<string>>,
+    isModalOpen: boolean
 }
 
 type TopicList = {
@@ -12,7 +12,7 @@ type TopicList = {
     checked: boolean
 }
 
-function HomePage({ setTopic }: PropsType) {
+function HomePage({ setTopic, isModalOpen }: PropsType) {
     updateLocalStore(topics);
 
     const listOfTopics: TopicList[] = JSON.parse(localStorage.getItem("topics") || '[{"topic": "none", "checked": false}]');
@@ -22,7 +22,7 @@ function HomePage({ setTopic }: PropsType) {
             const clippedTopic = item.topic.split(' ').join('-');
             
             return (
-                <Topic key={i} id={i} topic={clippedTopic} checked={item.checked} setTopic={setTopic} listOfTopics={listOfTopics}/>
+                <Topic key={i} id={i} topic={clippedTopic} checked={item.checked} setTopic={setTopic} listOfTopics={listOfTopics} isModalOpen={isModalOpen}/>
             )
         })
     );

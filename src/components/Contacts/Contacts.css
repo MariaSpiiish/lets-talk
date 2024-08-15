@@ -1,0 +1,42 @@
+.contacts {
+    margin: 20px auto 0;
+}
+
+.contacts__list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    gap: 40px;
+    
+}
+
+.contacts__list-item {
+    list-style: none;
+    height: 30px;
+    
+}
+
+.contacts__title {
+    font-family: "Roboto";
+    font-weight: 500;
+    line-height: 2;
+    margin: 0;
+    color: #f3f3f3;
+    font-size: 20px;
+    text-align: start;
+    margin-left: 20px;
+    max-width: 500px;
+    
+}
+
+.contacts__icon {
+    max-width: 30px;
+    height: 20px;
+    margin-top: 2.5px;
+}
+
+.contacts__link {
+    text-decoration: none;
+}

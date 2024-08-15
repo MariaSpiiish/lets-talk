@@ -1,13 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import './Footer.css';
 
 function Footer() {
   const year: number = new Date().getFullYear();
   const navigate = useNavigate();
-
-  const handleClickGit = () => {
-    window.location.href = 'https://github.com/MariaSpiiish';
-  };
 
   const handleClickAbout = () => {
     navigate("/about")
@@ -17,7 +12,11 @@ function Footer() {
     <footer className="footer">
         <p className="footer__date">&copy; {year}</p>
         <nav className="footer__link-container">
-          <button className="footer__button" onClick={handleClickGit}>GitHub</button>
+          <button className="footer__button">
+            <a href="https://github.com/MariaSpiiish" target="_blank" rel="noopener noreferrer" className="footer__link">
+              GitHub
+            </a>
+          </button>
           <button className="footer__button" onClick={handleClickAbout}>About</button>
         </nav>
     </footer>

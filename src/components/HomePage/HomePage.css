@@ -9,7 +9,8 @@
 .main__header {
     font-size: 40px;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin: 10px 0;
+    text-align: center;
 }
 
 .scroller {
