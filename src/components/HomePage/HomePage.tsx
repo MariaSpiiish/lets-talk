@@ -22,7 +22,15 @@ function HomePage({ setTopic, isModalOpen }: PropsType) {
             const clippedTopic = item.topic.split(' ').join('-');
             
             return (
-                <Topic key={i} id={i} topic={clippedTopic} checked={item.checked} setTopic={setTopic} listOfTopics={listOfTopics} isModalOpen={isModalOpen}/>
+                <Topic 
+                    key={i}
+                    id={i}
+                    topic={clippedTopic}
+                    checked={item.checked}
+                    setTopic={setTopic}
+                    listOfTopics={listOfTopics}
+                    isModalOpen={isModalOpen}
+                />
             )
         })
     );

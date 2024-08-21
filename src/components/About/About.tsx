@@ -2,8 +2,8 @@
 import { Link } from 'react-router-dom';
 
 function About() {
-    const imgM: string = new URL(`../../images/mariia.jpg`, import.meta.url).href;
-    const imgA: string = new URL(`../../images/aleksandra.jpg`, import.meta.url).href;
+    const imgM: string = new URL(`../../images/about/mariia.jpg`, import.meta.url).href;
+    const imgA: string = new URL(`../../images/about/aleksandra.jpg`, import.meta.url).href;
 
     const textM = "Teacher  -  Traveller  -  WebDev  -  Mariia  -  ";
     const textA = "W riter  -  Reader  -  Teacher  -  Aleksandra  -  ";

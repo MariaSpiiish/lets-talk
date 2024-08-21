@@ -42,25 +42,31 @@ function Topic({ topic, checked, id, listOfTopics, setTopic, isModalOpen }: Prop
           };
       }
       
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    
 
     const handleClick = () => {
       setTopic(topic);
-      listOfTopics.forEach(item => {
-        if (item.topic === topic) {
-          item.checked = true
+      console.log(topic)
+      
+      listOfTopics.forEach((item, i) => {
+        const temp = item.topic.split(' ').join('-');
+
+        if (temp === topic) {
+          listOfTopics[i].checked = true
         }
       })
-      console.log(listOfTopics)
+      
       localStorage.setItem("topics", JSON.stringify(listOfTopics))
     }
 
-    const img: string = new URL(`../../images/${topic}.jpg`, import.meta.url).href;
+    const img: string = new URL(`../../images/topicsListImages/${topic}.jpg`, import.meta.url).href;
     const buttonClass: string = `card__button ${checked && 'card__button-checked'}`
     
     const content = (
         <li ref={(el) => {if (el) cardRefs.current[id] = el}} className='card'>
-                <img src={img} alt={topic} className='card__img'></img>
+                <img src={img} alt={topic} className='card__img' />
                 <p className='card__text'>{topic.split('-').join(' ')}</p>
                 <Link to="/questions" className={buttonClass} onClick={handleClick}></Link>
         </li>   

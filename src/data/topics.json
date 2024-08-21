@@ -10,11 +10,11 @@
         },
         {
             "topic": "Forming habits",
-            "checked": true
+            "checked": false
         },
         {
-            "topic": "AI",
-            "checked": true
+            "topic": "Yoga and mindfulness",
+            "checked": false
         },
         {
             "topic": "Art",

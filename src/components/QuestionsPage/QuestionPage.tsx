@@ -1,26 +1,14 @@
 import { ReactElement } from 'react';
 import { data } from '../../data/data.json';
 import TasksList from '../TasksList/TasksList';
-
-type Topic = {
-  topic: string;
-  content: string;
-  title?: string;
-  type: string;
-  vocabulary: string;
-  questions: string;
-  about: string
-}
+import { Topic } from '../../utils/types';
 
 type PropsType = {
   topic: string
 }
 
 function QuestionPage({ topic }: PropsType) {
-  
- 
   const pickedTopic: Topic | undefined = data.find(item => item.topic == topic);
- 
 
   const pageContent: ReactElement | ReactElement[] = (
     pickedTopic

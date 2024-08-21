@@ -1,22 +1,25 @@
 .tasks__header {
     font-size: 30px;
     margin-bottom: 20px;
+    max-width: 980px;
 }
 
 .tasks__subheader {
     margin-top: 20px;
     font-size: 18px;
+    max-width: 980px;
 }
 
 .tasks__subheader-light {
     opacity: 0.5;
     font-weight: normal;
     font-size: 17px;
+    max-width: 980px;
 }
 
 .tasks__img {
-    width: 421px;
-    height: 551px;
+    width: 338px;
+    height: 451px;
     margin-bottom: 20px;
 }
 
@@ -31,4 +34,14 @@
 
 .tasks__video {
     border: none;
+}
+
+.tasks__text-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+.tasks__text-link:hover {
+    background-color: #876bb0;
 }

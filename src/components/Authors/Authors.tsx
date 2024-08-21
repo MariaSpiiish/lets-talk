@@ -14,7 +14,7 @@ function Authors() {
 
   const pickedAuthor: Author | undefined= about.find(item => item.name == name);
 
-  const img: string = new URL(`../../images/${pickedAuthor!.name}2.jpg`, import.meta.url).href;
+  const img: string = new URL(`../../images/about/${pickedAuthor!.name}2.jpg`, import.meta.url).href;
 
   let nameCap: string = '';
   if (name) {
