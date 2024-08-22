@@ -12,6 +12,7 @@ import {
 import HomePage from './components/HomePage/HomePage.tsx';
 import ErrorPage from './ErrorPage.tsx';
 import TipsPopup from './components/TipsPopup/TipsPopup.tsx';
+import DiscussedTopics from './components/DiscussedTopics/DiscussedTopics.tsx';
 
 function App() {
   const [topic, setTopic] = useState<string>('');
@@ -35,6 +36,7 @@ function App() {
           <Route path="/questions" element={<QuestionPage topic={topic} />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/about/:name" element={<Authors />}></Route>
+          <Route path="/discussed" element={<DiscussedTopics />}></Route>
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>

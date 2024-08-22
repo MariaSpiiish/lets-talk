@@ -38,11 +38,9 @@ function Authors() {
           <p key={i} className='author__p'>{p}</p>
         )}
 
-        {pickedAuthor.name === 'mariia' &&
-          <Contacts />
-        }
+        <Contacts name={name as string}/>
       </>
-      : <p>Sorry, something went wrong. Can you please go back to the home page while I'm figuring this out? 😇</p>
+      : <p>Sorry, something went wrong. Can you please go back to the home page while I'm figuring this out? 😇 You might as well contact me. The contacts are in the About section, Mariia</p>
   )
 
   const content = (

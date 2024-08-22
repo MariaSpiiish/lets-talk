@@ -23,7 +23,7 @@ function Header({ setIsModalOpen } : PropsType) {
   const pageContent = (
     location.pathname !== "/"
     ? <Link to="/" className='header__button header__button-nav'>{topicButtonText}</Link>
-    : <></>
+    : <Link to="/discussed" className='header__button header__button-nav'>Discussed Topics</Link>
   )
 
   const content = (

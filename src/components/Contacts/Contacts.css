@@ -15,7 +15,16 @@
 .contacts__list-item {
     list-style: none;
     height: 30px;
-    
+}
+
+.contacts__list-item:hover {
+    animation: magnify 1s forwards;
+}
+
+@keyframes magnify {
+    100% {
+        scale: 130%;
+    }
 }
 
 .contacts__title {
@@ -39,4 +48,9 @@
 
 .contacts__link {
     text-decoration: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    width: 100%; 
 }

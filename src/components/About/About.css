@@ -20,8 +20,15 @@
 }
 
 .about_img-wrapper:hover {
-    opacity: 0.5;
-
+    opacity: 0.7;
+}
+.about_img-wrapper:hover::before {
+    content: 'Find out more';
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    color: #000;
+    font-weight: 600;
 }
 
 .about_circle {

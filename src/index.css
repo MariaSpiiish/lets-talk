@@ -6,10 +6,10 @@
 @import url('./components/About/About.css');
 @import url('./components/Authors/Authors.css');
 @import url('./components/Contacts/Contacts.css');
-@import url('./components/QuestionsPage/QuestionPage.css');
 @import url('./components/TasksList/TasksList.css');
 @import url('./components/Footer/Footer.css');
 @import url('./components/TipsPopup/TipsPopup.css');
+@import url('./components/DiscussedTopics/DiscussedTopics.css');
 
 html {
   scroll-behavior: smooth;

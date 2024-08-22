@@ -24,7 +24,7 @@
 .header__button-nav {
     text-decoration: none;
     color: inherit;
-    border-radius: 3%;
+    border-radius: 0%;
     padding-top: 5px;
 }
 

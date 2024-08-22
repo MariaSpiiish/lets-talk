@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Tooltip } from 'antd';
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type TopicList = {
   topic: string,
@@ -8,16 +9,20 @@ type TopicList = {
 
 type PropsType = {
     topic: string,
-    checked: boolean,
+    
     id: number,
     listOfTopics: TopicList[],
     setTopic: React.Dispatch<React.SetStateAction<string>>,
-    isModalOpen: boolean
+    isModalOpen: boolean,
+    setListOfTopics: React.Dispatch<React.SetStateAction<TopicList[]>>
 }
 
-function Topic({ topic, checked, id, listOfTopics, setTopic, isModalOpen }: PropsType) {
+function Topic({ topic, id, listOfTopics, setTopic, isModalOpen, setListOfTopics }: PropsType) {
+    const navigate = useNavigate();
     const cardRefs = useRef<HTMLElement[]>([]);
-
+    const img: string = new URL(`../../images/topicsListImages/${topic}.jpg`, import.meta.url).href;
+    const [isBroken, setIsBroken] = useState(false);
+  
     useEffect(() => {
       if (!isModalOpen) {
         const observer = new IntersectionObserver((entries) => {
@@ -45,30 +50,42 @@ function Topic({ topic, checked, id, listOfTopics, setTopic, isModalOpen }: Prop
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
-
-    const handleClick = () => {
+    const handleCardClick = () => {
       setTopic(topic);
-      console.log(topic)
-      
-      listOfTopics.forEach((item, i) => {
-        const temp = item.topic.split(' ').join('-');
 
-        if (temp === topic) {
-          listOfTopics[i].checked = true
-        }
-      })
-      
-      localStorage.setItem("topics", JSON.stringify(listOfTopics))
+      navigate('/questions');
     }
 
-    const img: string = new URL(`../../images/topicsListImages/${topic}.jpg`, import.meta.url).href;
-    const buttonClass: string = `card__button ${checked && 'card__button-checked'}`
+    const handleCheckClick = (event: React.MouseEvent) => {
+      event?.stopPropagation();
+      setIsBroken(true);
+
+      setTimeout(() => {
+        const updatedTopics = listOfTopics.map((item) => {
+        const temp = item.topic.split(' ').join('-');
+
+        console.log(topic)
+          if (temp === topic) {
+            return { ...item, checked: true };
+          }
+          return item;
+        });
+
+        setListOfTopics(updatedTopics);
+        localStorage.setItem("topics", JSON.stringify(updatedTopics));
+      }, 1000)
+      
+    }
+
+    // const buttonClass = checked ? 'card__button card__button-checked' : 'card__button card__button';
     
     const content = (
-        <li ref={(el) => {if (el) cardRefs.current[id] = el}} className='card'>
+        <li ref={(el) => {if (el) cardRefs.current[id] = el}} className={`card ${isBroken ? 'breakdown' : ''}`} onClick={handleCardClick}>
                 <img src={img} alt={topic} className='card__img' />
                 <p className='card__text'>{topic.split('-').join(' ')}</p>
-                <Link to="/questions" className={buttonClass} onClick={handleClick}></Link>
+                <Tooltip title="Mark the topic as 'discussed'." color="#876bb0" placement="right">
+                      <button className='card__button' onClick={handleCheckClick} />
+                </Tooltip>   
         </li>   
     )
 
