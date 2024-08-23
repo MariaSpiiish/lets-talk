@@ -17,6 +17,7 @@ import DiscussedTopics from './components/DiscussedTopics/DiscussedTopics.tsx';
 function App() {
   const [topic, setTopic] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  console.log(topic)
 
   function Layout(): JSX.Element {
     return (
@@ -36,7 +37,7 @@ function App() {
           <Route path="/questions" element={<QuestionPage topic={topic} />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/about/:name" element={<Authors />}></Route>
-          <Route path="/discussed" element={<DiscussedTopics />}></Route>
+          <Route path="/discussed" element={<DiscussedTopics setTopic={setTopic}/>}></Route>
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>

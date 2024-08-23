@@ -1,3 +1,21 @@
 .discussed {
     flex: 1;
 }
+
+.ant-collapse-header-text {
+    font-weight: 500;
+}
+
+.discussed__question {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000; 
+}
+
+.discussed__link {
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 3;
+    color: #876bb0;
+}

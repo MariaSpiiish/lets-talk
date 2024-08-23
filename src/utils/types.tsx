@@ -7,4 +7,9 @@ export type Topic = {
     questions: string;
     about?: string
   }
+
+export type TopicList = {
+    topic: string,
+    checked: boolean
+}[]
   

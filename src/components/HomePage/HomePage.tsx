@@ -2,20 +2,16 @@ import { topics } from '../../data/topics.json'
 import Topic from '../Topic/Topic';
 import { updateLocalStore } from '../../utils/utility-functions';
 import { useState } from 'react';
+import { TopicList } from '../../utils/types';
 
 type PropsType = {
     setTopic: React.Dispatch<React.SetStateAction<string>>,
     isModalOpen: boolean
 }
 
-type TopicList = {
-    topic: string,
-    checked: boolean
-}
-
 function HomePage({ setTopic, isModalOpen }: PropsType) {
     updateLocalStore(topics);
-    const [listOfTopics, setListOfTopics] = useState<TopicList[]>(JSON.parse(localStorage.getItem("topics") || '[{"topic": "none", "checked": false}]'))
+    const [listOfTopics, setListOfTopics] = useState<TopicList>(JSON.parse(localStorage.getItem("topics") || '[{"topic": "none", "checked": false}]'))
     const uncheckedTopics = listOfTopics.filter(item => item.checked === false);
 
     const pageContent = (
@@ -25,9 +21,7 @@ function HomePage({ setTopic, isModalOpen }: PropsType) {
             return (
                 <Topic 
                     key={`${clippedTopic}-${i}`}
-                    id={i}
                     topic={clippedTopic}
-                    
                     setTopic={setTopic}
                     listOfTopics={listOfTopics}
                     isModalOpen={isModalOpen}

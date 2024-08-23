@@ -37,8 +37,7 @@ function About() {
     )
 
     const content = (
-        
-            <main className='main'>
+            <main className='about'>
                 {pageContent}
             </main>
            

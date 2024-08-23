@@ -1,6 +1,8 @@
 import { Tooltip } from 'antd';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
+import { useGSAP } from "@gsap/react";
 
 type TopicList = {
   topic: string,
@@ -9,87 +11,85 @@ type TopicList = {
 
 type PropsType = {
     topic: string,
-    
-    id: number,
     listOfTopics: TopicList[],
     setTopic: React.Dispatch<React.SetStateAction<string>>,
     isModalOpen: boolean,
     setListOfTopics: React.Dispatch<React.SetStateAction<TopicList[]>>
 }
 
-function Topic({ topic, id, listOfTopics, setTopic, isModalOpen, setListOfTopics }: PropsType) {
+gsap.registerPlugin(useGSAP);
+
+function Topic({ topic, listOfTopics, setTopic, isModalOpen, setListOfTopics }: PropsType) {
     const navigate = useNavigate();
-    const cardRefs = useRef<HTMLElement[]>([]);
+    const cardRef = useRef<HTMLLIElement | null>(null); // For single card reference
+    const { contextSafe } = useGSAP({ scope: cardRef });
+
     const img: string = new URL(`../../images/topicsListImages/${topic}.jpg`, import.meta.url).href;
-    const [isBroken, setIsBroken] = useState(false);
-  
+    
+    // // Use GSAP context to scope animations correctly
+    // useEffect(() => {
+    //     if (cardRef.current) {
+    //         const ctx = gsap.context(() => {
+    //             // Add GSAP animations here, using refs
+    //             gsap.fromTo(cardRef.current, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5 });
+    //         }, cardRef.current);
+
+    //         return () => ctx.revert(); // Clean up the animations on component unmount
+    //     }
+    // }, []);
+
     useEffect(() => {
-      if (!isModalOpen) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('in');
-                entry.target.classList.remove('out'); // Apply your animation class here
-              } else {
-                entry.target.classList.remove('in');
-                entry.target.classList.add('out');
-              }
-            });
-          }, { threshold: 0.1 }); // Adjust the threshold as needed
-      
-          cardRefs.current.forEach((cardRef) => {
-            
-            observer.observe(cardRef);
-          });
-      
-          return () => {
-            observer.disconnect();
-          };
-      }
-      
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    
+        if (!isModalOpen && cardRef.current) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        entry.target.classList.remove('out');
+                    } else {
+                        entry.target.classList.remove('in');
+                        entry.target.classList.add('out');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(cardRef.current);
+
+            return () => observer.disconnect();
+        }
+    }, [isModalOpen]);
+
     const handleCardClick = () => {
-      setTopic(topic);
-
-      navigate('/questions');
+        setTopic(topic);
+        navigate('/questions');
     }
 
-    const handleCheckClick = (event: React.MouseEvent) => {
-      event?.stopPropagation();
-      setIsBroken(true);
+    const handleCheckClick = contextSafe((event: React.MouseEvent) => {
+        event.stopPropagation();
 
-      setTimeout(() => {
-        const updatedTopics = listOfTopics.map((item) => {
-        const temp = item.topic.split(' ').join('-');
+        // Use GSAP to animate the breakdown
+        gsap.to('.card__button', { rotation: 180, onComplete: () => {
+            const updatedTopics = listOfTopics.map((item) => {
+                const temp = item.topic.split(' ').join('-');
+                if (temp === topic) {
+                    return { ...item, checked: true };
+                }
+                return item;
+            });
 
-        console.log(topic)
-          if (temp === topic) {
-            return { ...item, checked: true };
-          }
-          return item;
-        });
+            setListOfTopics(updatedTopics);
+            localStorage.setItem("topics", JSON.stringify(updatedTopics));
+        }});
+    })
 
-        setListOfTopics(updatedTopics);
-        localStorage.setItem("topics", JSON.stringify(updatedTopics));
-      }, 1000)
-      
-    }
-
-    // const buttonClass = checked ? 'card__button card__button-checked' : 'card__button card__button';
-    
-    const content = (
-        <li ref={(el) => {if (el) cardRefs.current[id] = el}} className={`card ${isBroken ? 'breakdown' : ''}`} onClick={handleCardClick}>
-                <img src={img} alt={topic} className='card__img' />
-                <p className='card__text'>{topic.split('-').join(' ')}</p>
-                <Tooltip title="Mark the topic as 'discussed'." color="#876bb0" placement="right">
-                      <button className='card__button' onClick={handleCheckClick} />
-                </Tooltip>   
+    return (
+        <li ref={cardRef} className='card' onClick={handleCardClick}>
+            <img src={img} alt={topic} className='card__img' />
+            <p className='card__text'>{topic.split('-').join(' ')}</p>
+            <Tooltip title="Mark the topic as 'discussed'." color="#876bb0" placement="right">
+                <button className='card__button' onClick={handleCheckClick} />
+            </Tooltip>   
         </li>   
-    )
-
-    return content;
+    );
 }
 
-export default Topic
+export default Topic;

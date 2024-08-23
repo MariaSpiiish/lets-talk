@@ -10,6 +10,7 @@ function TasksList({ pickedTopic }: PropsType) {
     const isVideo: boolean = pickedTopic.type === "video" ? true : false
     const img: string = new URL(`../../images/textImages/${pickedTopic.topic}-img.jpg`, import.meta.url).href;
     const thumbnail: string = new URL(`../../images/loading.jpg`, import.meta.url).href;
+    
 
     const pageContent: ReactElement = (
         <>

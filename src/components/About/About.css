@@ -3,6 +3,7 @@
     min-width: 900px;
     justify-content: space-around;
     align-items: center;
+    flex: 1;
 }
 
 .about_img {
