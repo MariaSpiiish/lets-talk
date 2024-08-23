@@ -4,6 +4,7 @@ type TopicList = {
 }
 
 export function updateLocalStore(topics: TopicList[]): void {
+    console.log(topics)
     if (!localStorage.getItem("topics"))  {
         localStorage.setItem("topics", JSON.stringify(topics));
         console.log('fill the local storage')

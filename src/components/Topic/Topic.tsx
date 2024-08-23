@@ -25,18 +25,6 @@ function Topic({ topic, listOfTopics, setTopic, isModalOpen, setListOfTopics }: 
     const { contextSafe } = useGSAP({ scope: cardRef });
 
     const img: string = new URL(`../../images/topicsListImages/${topic}.jpg`, import.meta.url).href;
-    
-    // // Use GSAP context to scope animations correctly
-    // useEffect(() => {
-    //     if (cardRef.current) {
-    //         const ctx = gsap.context(() => {
-    //             // Add GSAP animations here, using refs
-    //             gsap.fromTo(cardRef.current, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5 });
-    //         }, cardRef.current);
-
-    //         return () => ctx.revert(); // Clean up the animations on component unmount
-    //     }
-    // }, []);
 
     useEffect(() => {
         if (!isModalOpen && cardRef.current) {
@@ -65,9 +53,10 @@ function Topic({ topic, listOfTopics, setTopic, isModalOpen, setListOfTopics }: 
 
     const handleCheckClick = contextSafe((event: React.MouseEvent) => {
         event.stopPropagation();
-
+        cardRef.current?.classList.add('bla')
+        console.log(cardRef.current)
         // Use GSAP to animate the breakdown
-        gsap.to('.card__button', { rotation: 180, onComplete: () => {
+        gsap.to('.card', { y: -260, x: 200, opacity: 0, ease: "power2.inOut", duration: 1, onComplete: () => {
             const updatedTopics = listOfTopics.map((item) => {
                 const temp = item.topic.split(' ').join('-');
                 if (temp === topic) {
@@ -82,12 +71,14 @@ function Topic({ topic, listOfTopics, setTopic, isModalOpen, setListOfTopics }: 
     })
 
     return (
-        <li ref={cardRef} className='card' onClick={handleCardClick}>
-            <img src={img} alt={topic} className='card__img' />
-            <p className='card__text'>{topic.split('-').join(' ')}</p>
-            <Tooltip title="Mark the topic as 'discussed'." color="#876bb0" placement="right">
-                <button className='card__button' onClick={handleCheckClick} />
-            </Tooltip>   
+        <li ref={cardRef} className='card-container' onClick={handleCardClick}>
+            <div className='card'>
+                <img src={img} alt={topic} className='card__img' />
+                <p className='card__text'>{topic.split('-').join(' ')}</p>
+                <Tooltip title="Mark the topic as 'discussed'." color="#876bb0" placement="right">
+                    <button className='card__button' onClick={handleCheckClick} />
+                </Tooltip>   
+            </div>
         </li>   
     );
 }

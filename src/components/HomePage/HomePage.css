@@ -27,8 +27,12 @@
     padding-left: 30px;
     max-height: 450px;
     overflow: scroll;
-    mask: linear-gradient(180deg,  transparent, white 5%, white 70%, transparent);
-    -webkit-mask: linear-gradient(180deg, transparent,white 5%,  white 70%, transparent);
+    mask-image: linear-gradient(180deg, transparent, white 5%, white 90%, transparent),
+                linear-gradient(to right, transparent, white 5%, white 95%, transparent);
+    -webkit-mask-image: linear-gradient(180deg, transparent, white 5%, white 90%, transparent),
+                        linear-gradient(to right, transparent, white 5%, white 95%, transparent);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
 }
 
 .scroller::-webkit-scrollbar {
