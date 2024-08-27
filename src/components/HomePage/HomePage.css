@@ -68,12 +68,12 @@
         padding-left: 0;
     }
     .scroller__inner {
-        max-width: 380px;
+        width: 100%;
     }
 }
 
-@media (max-width: 350px) {
+/* @media (max-width: 350px) {
     .scroller__inner {
         width: 300px;
     }
-}
+} */
