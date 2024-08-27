@@ -1,9 +1,14 @@
-.about {
+.about{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.about__container {
     display: flex;
     min-width: 900px;
     justify-content: space-around;
     align-items: center;
-    flex: 1;
 }
 
 .about_img {
@@ -81,3 +86,20 @@
     transform-origin: 0 130px;
 }
 
+@media (max-width: 950px) {
+    .about__container {
+        min-width: 700px;
+    }
+}
+
+
+@media (max-width: 710px) {
+    .about {
+        margin-top: 20px;
+    }
+    .about__container {
+        flex-direction: column;
+        min-width: 0;
+        gap: 40px;
+    }
+}

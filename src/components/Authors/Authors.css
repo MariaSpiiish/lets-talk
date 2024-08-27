@@ -30,3 +30,33 @@
     padding-bottom: 10px;
     line-height: 1.5;
 }
+
+@media (max-width: 650px) {
+    .author__card {
+        width: 400px;
+    }
+    .author__subtitle {
+        font-size: 18px;
+    }
+    .author__p {
+        font-size: 16px;
+    }
+    .author__title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 450px) {
+    .author__card {
+        width: 300px;
+    }
+    .author__subtitle {
+        font-size: 16px;
+    }
+    .author__p {
+        font-size: 14px;
+    }
+    .author__title {
+        font-size: 20px;
+    }
+}

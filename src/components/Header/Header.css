@@ -24,7 +24,7 @@
 .header__button-nav {
     text-decoration: none;
     color: inherit;
-    border-radius: 0%;
+    border-radius: 2%;
     padding-top: 5px;
 }
 
@@ -50,9 +50,18 @@
         gap: 50px;
     }
 
+    .header__button {
+        font-size: 18px;
+    }
+
     .header__button-nav {
         text-align: center;
         width: 200px;
-        height: 60px;
+        height: 80px;
+    }
+
+    .header__logo {
+        width: 80px;
+        height: 80px;
     }
 }
