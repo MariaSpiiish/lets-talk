@@ -40,3 +40,9 @@ body{
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 350px) {
+  .page-container {
+    padding: 10px;
+  }
+}

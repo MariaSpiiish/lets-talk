@@ -17,7 +17,6 @@ import DiscussedTopics from './components/DiscussedTopics/DiscussedTopics.tsx';
 function App() {
   const [topic, setTopic] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  console.log(topic)
 
   function Layout(): JSX.Element {
     return (

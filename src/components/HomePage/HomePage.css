@@ -23,7 +23,6 @@
 }
 
 .scroller {
-    /* border: 3px solid lime; */
     padding-left: 30px;
     max-height: 450px;
     overflow: scroll;
@@ -45,4 +44,30 @@
     gap: 10px;
     width: 550px;
     list-style-type: none;
+}
+
+@media (max-width: 750px) {
+    .main__header {
+        font-size: 30px;
+    }
+
+    .main__apology {
+        font-size: 16px;
+    }
+
+    .scroller__inner {
+        width: 400px;
+    }
+}
+
+@media (max-width: 350px) {
+    .main__header {
+        font-size: 24px;
+    }
+    .scroller {
+        padding-left: 0;
+    }
+    .scroller__inner {
+        width: 300px;
+    }
 }

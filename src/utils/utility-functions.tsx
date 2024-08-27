@@ -4,7 +4,6 @@ type TopicList = {
 }
 
 export function updateLocalStore(topics: TopicList[]): void {
-    console.log(topics)
     if (!localStorage.getItem("topics"))  {
         localStorage.setItem("topics", JSON.stringify(topics));
         console.log('fill the local storage')
@@ -14,7 +13,6 @@ export function updateLocalStore(topics: TopicList[]): void {
         topics.forEach(topic => {
             if (!temp.some(i => i.topic === topic.topic)) {
                 temp.push(topic);
-                console.log('temp2', temp)
             } 
         })
 

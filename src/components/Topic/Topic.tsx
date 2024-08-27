@@ -53,9 +53,7 @@ function Topic({ topic, listOfTopics, setTopic, isModalOpen, setListOfTopics }: 
 
     const handleCheckClick = contextSafe((event: React.MouseEvent) => {
         event.stopPropagation();
-        cardRef.current?.classList.add('bla')
-        console.log(cardRef.current)
-        // Use GSAP to animate the breakdown
+        
         gsap.to('.card', { y: -260, x: 200, opacity: 0, ease: "power2.inOut", duration: 1, onComplete: () => {
             const updatedTopics = listOfTopics.map((item) => {
                 const temp = item.topic.split(' ').join('-');
