@@ -10,6 +10,7 @@ function TasksList({ pickedTopic }: PropsType) {
     const isVideo: boolean = pickedTopic.type === "video" ? true : false
     const img: string = new URL(`../../images/textImages/${pickedTopic.topic}-img.jpg`, import.meta.url).href;
     const thumbnail: string = new URL(`../../images/loading.jpg`, import.meta.url).href;
+    console.log(pickedTopic.about)
     
 
     const pageContent: ReactElement = (
@@ -26,11 +27,9 @@ function TasksList({ pickedTopic }: PropsType) {
 
             {isVideo 
                 ? <>
-                    {isLoading && <img src={thumbnail} alt="Video Thumbnail" className="video-placeholder" />}
+                    {isLoading && <img src={thumbnail} alt="Video Thumbnail" className="tasks__video-placeholder" />}
                     <iframe 
                         className="tasks__video"
-                        width="560"
-                        height="315"
                         src={pickedTopic.content}
                         title="YouTube video player"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"

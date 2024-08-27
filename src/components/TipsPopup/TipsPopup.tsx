@@ -17,7 +17,7 @@ function TipsPopup({ isModalOpen, setIsModalOpen }: PropsType) {
 
   return (
     <Modal 
-        title="Tips"
+        title="Let's Talk Tips"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
@@ -26,8 +26,9 @@ function TipsPopup({ isModalOpen, setIsModalOpen }: PropsType) {
       >
         <p className="popup__p"><BulbFilled style={{color: "#cd51c3"}}/> Find a buddy who is as eager to practice English as you are.</p>
         <p className="popup__p"><BulbFilled style={{color: "#217d77"}}/> Pick a topic of interest from the list.</p>
-        <p className="popup__p"><BulbFilled style={{color: "#d08058"}}/> When you get to the topic page, you will first see a video or an article you might want to watch or read. It is there to stimulate the discussion if you'd like.</p>
+        <p className="popup__p"><BulbFilled style={{color: "#d08058"}}/> When you get to the topic page, you will first see a video<span style={{color: "red"}}>*</span> or an article you might want to watch or read. It is there to stimulate the discussion if you'd like.</p>
         <p className="popup__p"><BulbFilled style={{color: "#bea2e7"}}/> Not willing to read or watch anything? <span>Just scroll down straight to the questions!</span></p>
+        <p className="popup__p"><span style={{color: "red"}}>*</span> You might need a VPN to watch the video (YouTube).</p>
     </Modal>
   )
 }
