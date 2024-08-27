@@ -60,13 +60,19 @@
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
     .main__header {
         font-size: 24px;
     }
     .scroller {
         padding-left: 0;
     }
+    .scroller__inner {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 350px) {
     .scroller__inner {
         width: 300px;
     }

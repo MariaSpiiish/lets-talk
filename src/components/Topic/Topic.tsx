@@ -38,7 +38,7 @@ function Topic({ topic, listOfTopics, setTopic, isModalOpen, setListOfTopics }: 
                         entry.target.classList.add('out');
                     }
                 });
-            }, { threshold: 0.3 });
+            }, { threshold: 0.2 });
 
             observer.observe(cardRef.current);
 
