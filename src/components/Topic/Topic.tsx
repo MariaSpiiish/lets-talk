@@ -38,7 +38,7 @@ function Topic({ topic, listOfTopics, setTopic, isModalOpen, setListOfTopics }: 
                         entry.target.classList.add('out');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.3 });
 
             observer.observe(cardRef.current);
 
@@ -54,7 +54,7 @@ function Topic({ topic, listOfTopics, setTopic, isModalOpen, setListOfTopics }: 
     const handleCheckClick = contextSafe((event: React.MouseEvent) => {
         event.stopPropagation();
         
-        gsap.to('.card', { y: -260, x: 200, opacity: 0, ease: "power2.inOut", duration: 1, onComplete: () => {
+        gsap.to('.card', { y: -260, x: 200, opacity: 0, ease: "power2.inOut", delay: 1, duration: 1, onComplete: () => {
             const updatedTopics = listOfTopics.map((item) => {
                 const temp = item.topic.split(' ').join('-');
                 if (temp === topic) {

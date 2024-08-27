@@ -43,6 +43,7 @@ body{
 
 @media (max-width: 350px) {
   .page-container {
+    max-width: 320px;
     padding: 10px;
   }
 }
