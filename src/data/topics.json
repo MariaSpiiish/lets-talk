@@ -23,6 +23,10 @@
         {
             "topic": "Reading",
             "checked": false
+        },
+        {
+            "topic": "Personality",
+            "checked": false
         }
    ] 
 }

@@ -41,6 +41,14 @@
             "type": "text",
             "vocabulary": "learningapps link",
             "questions": "1 What kind of reader are you? Why do you read?\n 2 Do you prefer reading physical books, e-books, or listening to audiobooks? \n 3 What is your favorite book or author, and why do you enjoy their work?\n 4 Do you think reading can help reduce stress or improve mental health? Why or why not?\n 5 How does reading help you discover more about yourself? Can you share an experience where a book helped you understand something about your own life?\n  6 Why is it important to study the historical context of literature? How does understanding the time period of a book's creation change your interpretation of it?\n  7 What techniques do you use to stay focused while reading, especially when dealing with difficult texts?\n  8 How can analyzing the way a book is written—such as the characters, setting, and style—help you become a better reader or writer?\n 9 What do you think about the popularity of online articles, blogs, and social media as sources of reading material? Are they as valuable as traditional books? Do you believe that people are reading less in the digital age? "
+        },
+        {
+            "topic": "Personality",
+            "about": "Throughout human history, the question of identity has inspired poets to write, philosophers to debate, and seekers to consult oracles. This abstract and complex subject can be difficult to grasp, which is why the Greek historian Plutarch used a story about a ship to illustrate its intricacies. Amy Adkins sheds light on Plutarch’s tale of the Ship of Theseus.",
+            "content": "https://www.youtube.com/embed/UHwVyplU3Pg?si=hnyr_B6yDMLBQoQD",
+            "type": "video",
+            "vocabulary": "learningapps link",
+            "questions": "1 How would you usually describe yourself to someone you have never met before?\n 2 How do you perceive your identity? Do you see it as something fixed or something that evolves over time? How has your personality changed over the years?\n 3 What factors do you think might influence someone’s identity (personality)?\n 4 What hobbies or interests are a big part of your identity?\n 5 What aspects of your personality are you most proud of?\n 6 Do you somehow express your identity through your clothing or style? \n 7 What qualities do you value most in a friend?\n 8 How important is it for you to understand other people's personalities?\n 8 What are some ways you try to improve or develop your personality?"
         }
     ]
 }
