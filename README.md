@@ -3,7 +3,7 @@
 #### Description:
 A web app to help English enthusiasts to improve their speaking skills.
 
-The project is a single-page app developed using the React library, written in TypeScript, with CSS animations and the GSAP animation library. The project also includes a collapsible accordion component and a Tooltip component from the AntDesign library to ensure a user-friendly UI. Semantic HTML is utilized throughout the app to enhance accessibility and improve the overall structure of the content.
+The project is a single-page app developed using the React library, written in TypeScript, with CSS animations and the GSAP animation library. The project also includes a collapsible accordion component and a Tooltip component from the AntDesign library to ensure a user-friendly UI. Semantic HTML is utilized throughout the app to enhance accessibility and improve the overall structure of the content. The app is fully responsive and adapted for use on desktop, tablet, and mobile devices.
 
 :house: The user starts on a Home Page with a list of discussion topics to choose from. By clicking on a chosen topic, the user is redirected to the topic page.
 
@@ -24,3 +24,9 @@ The project is a single-page app developed using the React library, written in T
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Ant-Design](https://img.shields.io/badge/-AntDesign-%230170FE?style=for-the-badge&logo=ant-design&logoColor=white)
+
+#### Plans for Future Development:
+- [ ] Introduce user profiles.
+- [ ] Update content library.
+- [ ] Develop backend to deal with user profiles and content library.
+- [ ] Add interactive elements to like or dislike topics, comment and share opinions.
