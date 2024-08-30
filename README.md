@@ -3,17 +3,17 @@
 #### Description:
 A web app to help English enthusiasts to improve their speaking skills.
 
-The project is a single page app developed using React library written on TypeScript with CSS animation and GSAP animation library. The project also includes a collapsible accordion component from AntDesign library and a Tooltip component to ensure friendly UI.
+The project is a single-page app developed using the React library, written in TypeScript, with CSS animations and the GSAP animation library. The project also includes a collapsible accordion component and a Tooltip component from the AntDesign library to ensure a user-friendly UI. Semantic HTML is utilized throughout the app to enhance accessibility and improve the overall structure of the content.
 
-:house: The user starts on a Home Page with a list of discussion topics to choose from. By clicking on a chosen topic the user gets redirected to the topic page.
+:house: The user starts on a Home Page with a list of discussion topics to choose from. By clicking on a chosen topic, the user is redirected to the topic page.
 
-:page_facing_up: Topic page includes a video or an article which is there to stimulate the discussion. Discussion questions on the topic are below the video or the article.
+:page_facing_up: The Topic page includes a video or an article designed to stimulate discussion. Below the video or article, there are discussion questions related to the topic.
 
-:white_check_mark: Once the topic is discussed it may be marked as discussed. Thus, the discussed topics route gets filled in with the list of discussed topics and the topic itself is deleted from the homepage, though it can be accessed through the discussed topic route as well.
+:white_check_mark: Once a topic has been discussed, it can be marked as discussed. The discussed topics route then fills with a list of topics that have been completed, and the topic itself is removed from the homepage. However, it can still be accessed through the discussed topics route.
 
-:dancer: About page provides information about the developer and the coauthor of the content.
+:dancer: The About page provides information about the developer and the co-author of the content.
 
-:sailboat: The app is easy to navigate following links both in the header and the footer of the page.
+:sailboat: The app is easy to navigate, with links available in both the header and footer of the page.
 
 #### Technologies
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
