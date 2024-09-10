@@ -15,7 +15,7 @@
     border: none;
     background-color: #876bb0;
     padding: 0 10px 0;
-    border-radius: 15%;
+    border-radius: 5px;
     cursor: pointer;
     max-height: 30px;
     margin-top: 10px;
@@ -24,7 +24,6 @@
 .header__button-nav {
     text-decoration: none;
     color: inherit;
-    border-radius: 2%;
     padding-top: 5px;
 }
 
