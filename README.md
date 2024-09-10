@@ -1,5 +1,6 @@
 # Let's Talk Web App
 #### Video Demo:  <[Google drive link](https://drive.google.com/file/d/1G_snJF8lDGjBXfwh7liUcOmciEm3GGF7/view?usp=sharing)>
+#### Link: <[Gitpages link](https://mariaspiiish.github.io/lets-talk/)>
 #### Description:
 A web app to help English enthusiasts to improve their speaking skills.
 
